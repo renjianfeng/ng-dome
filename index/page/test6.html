@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp1">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-controller="testController4">
+<div class="dddd"></div>
+<div class="dddd"></div>
+<div class="dddd"></div>
+<div class="dddd"></div>
+<hdd uname="usd(name)" ></hdd>
+</body>
+<script src="../../index/js/angular-1.3.0.js"></script>
+<script>
+    var myApp1=angular.module("myApp1",[]);
+    var dd= angular.element(document).attr('').length;
+    alert(dd);
+    myApp1.controller("testController4",['$scope',function($scope){
+
+    }])
+    //指令
+    myApp1.directive("hdd",function(){
+        return{
+            restrict : 'AE',
+            scope:{
+                uname : '&'
+            },
+            template : '<input type="text" ng-model="userName"> <button ng-click="uname({name:userName})">点击</button>',
+            link:function(scope,element,attrs){
+            }
+        }
+    })
+</script>
+</html>
